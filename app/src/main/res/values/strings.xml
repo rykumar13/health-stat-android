@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">health_stat</string>
+    <string name="water_header">WATER</string>
+    <string name="calories_header">CALORIES</string>
 </resources>
