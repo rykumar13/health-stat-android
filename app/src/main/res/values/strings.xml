@@ -2,4 +2,9 @@
     <string name="app_name">health_stat</string>
     <string name="water_header">WATER</string>
     <string name="calories_header">CALORIES</string>
+    <string name="sleep_dashboard">SLEEP</string>
+    <string name="overview_dashboard">OVERVIEW</string>
+    <string name="calories_dashboard">CALORIES</string>
+    <string name="water_dashboard">WATER</string>
+    <string name="cardio_dashboard">CARDIO</string>
 </resources>
