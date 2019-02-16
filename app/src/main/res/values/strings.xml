@@ -4,6 +4,7 @@
     <string name="calories_header">CALORIES</string>
     <string name="sleep_dashboard">SLEEP</string>
     <string name="overview_dashboard">OVERVIEW</string>
+    <string name="detail_cardio">CARDIO</string>
     <string name="calories_dashboard">CALORIES</string>
     <string name="water_dashboard">WATER</string>
     <string name="cardio_dashboard">CARDIO</string>
@@ -11,4 +12,5 @@
     <string name="dashboard_water_goal">Goal: 2.5L</string>
     <string name="dashboard_calories_goal">Goal: 600 CALORIES</string>
     <string name="dashboard_sleep_goal">Goal: 8 HOURS</string>
+    <string name="cardio_daily_progress">DAILY PROGRESS</string>
 </resources>
