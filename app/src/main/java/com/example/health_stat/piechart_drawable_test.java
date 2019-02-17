@@ -32,6 +32,6 @@ public class piechart_drawable_test extends AppCompatActivity {
 
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
-        pieDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
+        pieDataSet.setColors(ColorTemplate.PASTEL_COLORS);
     }
 }
