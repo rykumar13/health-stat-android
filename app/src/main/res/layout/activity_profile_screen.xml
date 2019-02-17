@@ -29,23 +29,72 @@
         app:layout_constraintVertical_bias="0.0">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/TopDisplay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="246dp"
+            app:layout_constraintBottom_toTopOf="@+id/BottomDisplay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <EditText
+                android:id="@+id/ProfileText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="PROFILE"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="23dp"
+                android:layout_marginRight="23dp"
+                android:scaleType="centerInside"
+                android:visibility="visible"
+                app:layout_constraintEnd_toStartOf="@+id/ProfileText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/sym_def_app_icon"
+                tools:srcCompat="@tools:sample/avatars" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
             android:id="@+id/MiddleDisplay"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginBottom="405dp"
+            android:layout_marginBottom="300dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TopDisplay">
+            app:layout_constraintTop_toBottomOf="@+id/TopDisplay"
+            app:layout_constraintVertical_bias="1.0">
 
             <android.support.constraint.ConstraintLayout
                 android:id="@+id/MiddleDisplayDetails"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="118dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
@@ -63,7 +112,31 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Weight" />
+                    app:layout_constraintTop_toBottomOf="@+id/Weight">
+
+                    <TextView
+                        android:id="@+id/HeightDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginRight="14dp"
+                        android:text="170 cm"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Height"
+                        android:textSize="18sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="HEIGHT" />
+                </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/Weight"
@@ -72,7 +145,30 @@
                     app:layout_constraintBottom_toTopOf="@+id/Height"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/Age" />
+                    app:layout_constraintTop_toBottomOf="@+id/Age">
+
+                    <TextView
+                        android:id="@+id/WeightDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="27dp"
+                        android:layout_marginRight="27dp"
+                        android:text="60 kg"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/editText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Weight"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="WEIGHT" />
+                </android.support.constraint.ConstraintLayout>
 
                 <android.support.constraint.ConstraintLayout
                     android:id="@+id/Age"
@@ -82,73 +178,147 @@
                     app:layout_constraintBottom_toTopOf="@+id/Weight"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/editText3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text="Age"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="AGE" />
+
+                    <TextView
+                        android:id="@+id/AgeDisplay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="47dp"
+                        android:layout_marginRight="47dp"
+                        android:text="25"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </android.support.constraint.ConstraintLayout>
 
             </android.support.constraint.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/ProfilePicture"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="112dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginRight="19dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/Username"
                 app:layout_constraintEnd_toStartOf="@+id/MiddleDisplayDetails"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/Username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:text="Username"
+                app:layout_constraintBottom_toTopOf="@+id/realName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ProfilePicture"
+                tools:text="LIUG" />
+
+            <TextView
+                android:id="@+id/realName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="21dp"
+                android:text="Real Name"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Username"
+                tools:text="Garman Liu" />
         </android.support.constraint.ConstraintLayout>
 
         <android.support.constraint.ConstraintLayout
-            android:id="@+id/TopDisplay"
-            android:layout_width="0dp"
+            android:id="@+id/BottomDisplay"
+            android:layout_width="285dp"
             android:layout_height="0dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="68dp"
-            app:layout_constraintBottom_toTopOf="@+id/MiddleDisplay"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/TopDisplay">
+
+            <EditText
+                android:id="@+id/CurrentStreak"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="CURRENT STREAK"
+                app:layout_constraintEnd_toEndOf="@+id/MaximumStreak"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/CurrentStreakText"
                 android:layout_width="0dp"
-                android:layout_height="33dp"
-                android:layout_marginEnd="117dp"
-                android:layout_marginRight="117dp"
-                android:text="TextView"
-                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                android:textSize="24sp"
-                android:typeface="sans"
-                android:visibility="visible"
-                app:fontFamily="sans-serif-light"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="PROFILE" />
+                android:layout_height="wrap_content"
+                android:text="12 days"
+                app:layout_constraintBaseline_toBaselineOf="@+id/CurrentStreak"
+                app:layout_constraintEnd_toEndOf="@+id/maximumStreakText"
+                app:layout_constraintStart_toStartOf="@+id/maximumStreakText" />
 
-            <ImageView
-                android:id="@+id/imageView"
+            <EditText
+                android:id="@+id/MaximumStreak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginRight="30dp"
-                android:scaleType="centerInside"
-                android:visibility="visible"
-                app:layout_constraintEnd_toStartOf="@+id/textView7"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="MAXIMUM STREAK"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@android:drawable/sym_def_app_icon"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:layout_constraintTop_toBottomOf="@+id/CurrentStreak" />
+
+            <TextView
+                android:id="@+id/maximumStreakText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_marginBottom="11dp"
+                android:text="15 days"
+                app:layout_constraintBottom_toBottomOf="@+id/MaximumStreak"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/WeightChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="WEIGHT CHANGE"
+                app:layout_constraintStart_toStartOf="@+id/MaximumStreak"
+                app:layout_constraintTop_toBottomOf="@+id/MaximumStreak" />
+
+            <TextView
+                android:id="@+id/weightChangeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:text="+4 kg"
+                app:layout_constraintBottom_toBottomOf="@+id/WeightChange"
+                app:layout_constraintStart_toEndOf="@+id/WeightChange" />
+
         </android.support.constraint.ConstraintLayout>
+
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>
