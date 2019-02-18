@@ -1,10 +1,12 @@
 package com.example.health_stat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 
 import com.github.mikephil.charting.charts.LineChart;
@@ -108,5 +110,10 @@ public class detail_screen extends AppCompatActivity {
         yAxisRight.setDrawGridLines(false);
         yAxisRight.setDrawAxisLine(false);
         lineChart.animateXY(1000, 1000);
+    }
+
+    public void sendBack(View view) {
+        Intent intent = new Intent(this, dashboard_screen.class);
+        startActivity(intent);
     }
 }

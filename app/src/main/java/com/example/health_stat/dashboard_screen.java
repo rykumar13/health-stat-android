@@ -1,8 +1,11 @@
 package com.example.health_stat;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
@@ -23,6 +26,11 @@ public class dashboard_screen extends AppCompatActivity {
         renderCaloriesChart();
         renderCardioChart();
         renderSleepChart();
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, detail_screen.class);
+        startActivity(intent);
     }
 
     public void renderWaterChart() {
