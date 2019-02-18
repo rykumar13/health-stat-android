@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
@@ -28,6 +29,7 @@ public class detail_screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_screen);
+
 
         //Main Pie Chart
         PieChart pieChart = findViewById(R.id.piechart);
@@ -55,6 +57,7 @@ public class detail_screen extends AppCompatActivity {
         };
         pieDataSet.setColors(RAJ_COLORS);
         pieDataSet.setSliceSpace(5f);
+        pieChart.animateXY(1000, 1000);
 
 
         //Bottom Line Chart
@@ -104,5 +107,6 @@ public class detail_screen extends AppCompatActivity {
         YAxis yAxisRight = lineChart.getAxisRight();
         yAxisRight.setDrawGridLines(false);
         yAxisRight.setDrawAxisLine(false);
+        lineChart.animateXY(1000, 1000);
     }
 }
