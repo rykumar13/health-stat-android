@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -21,17 +22,21 @@ public class detail_screen extends AppCompatActivity {
         PieChart pieChart = findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);
 
-        pieChart.setHoleRadius(25f);
+        pieChart.setHoleRadius(75f);
         pieChart.setTransparentCircleRadius(20f);
 
         List<PieEntry> value = new ArrayList<>();
-        value.add(new PieEntry(400, "Achieved"));
-        value.add(new PieEntry(600, "Remaining"));
+        value.add(new PieEntry(400));
+        value.add(new PieEntry(600));
 
-        PieDataSet pieDataSet = new PieDataSet(value, "Water");
+        Description desc = new Description();
+        desc.setText("test");
+        desc.setTextSize(20f);
+        PieDataSet pieDataSet = new PieDataSet(value, "test");
 
         PieData pieData = new PieData(pieDataSet);
         pieChart.setData(pieData);
-        pieDataSet.setColor(ColorTemplate.rgb("#0095FF"));
+        pieDataSet.setColors(ColorTemplate.JOYFUL_COLORS);
+        pieDataSet.setSliceSpace(5f);
     }
 }
