@@ -14,4 +14,5 @@
     <string name="dashboard_sleep_goal">Goal: 8 HOURS</string>
     <string name="cardio_daily_progress">DAILY PROGRESS</string>
     <string name="cardio_weekly_progress">WEEKLY PROGRESS</string>
+    <string name="rainbow_test">RAINBOW</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.health_stat;
 
-import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +16,6 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +25,7 @@ public class bar_graph_drawable_test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bar_graph_drawable_test);
+        setContentView(R.layout.test_layout2);
         BarChart barChart = findViewById(R.id.barchart);
 
         List<BarEntry> value = new ArrayList<>();
