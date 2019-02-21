@@ -15,13 +15,13 @@ import com.github.mikephil.charting.data.PieEntry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder> {
+public class PieCardAdapter extends RecyclerView.Adapter<PieCardAdapter.CardViewHolder> {
 
 
-    private String[] text;
+    private PieDataSet[] PieDataSet;
 
-    public CardAdapter(String[] text) {
-        this.text = text;
+    public PieCardAdapter(PieDataSet[] PieDataSet) {
+        this.PieDataSet = PieDataSet;
     }
 
     @NonNull
@@ -34,28 +34,23 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        holder.txt_view.setText(text[position]);
-        List<PieEntry> value = new ArrayList<>();
-        value.add(new PieEntry(400));
-        value.add(new PieEntry(600));
-        PieDataSet pieDataSet = new PieDataSet(value, "test");
-        PieData pieData = new PieData(pieDataSet);
+        PieData pieData = new PieData(PieDataSet[position]);
         holder.pieChart.setData(pieData);
+        holder.pieChart.notifyDataSetChanged();
+        holder.pieChart.invalidate();
     }
 
     @Override
     public int getItemCount() {
-        return text.length;
+        return PieDataSet.length;
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_view;
         public PieChart pieChart;
 
         public CardViewHolder(View itemView) {
             super(itemView);
             pieChart = itemView.findViewById(R.id.piechart_card);
-            txt_view = itemView.findViewById(R.id.txtTag);
         }
 
 
