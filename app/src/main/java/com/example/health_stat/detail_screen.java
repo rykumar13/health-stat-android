@@ -6,6 +6,10 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.LinearSnapHelper;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SnapHelper;
 import android.view.View;
 import android.view.Window;
 
@@ -27,39 +31,60 @@ import java.util.List;
 
 public class detail_screen extends AppCompatActivity {
 
+    final int[] RAJ_COLORS = {
+            Color.rgb(210, 235, 245), Color.rgb(2, 136, 209)
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_screen);
 
-
-        //Main Pie Chart
-        PieChart pieChart = findViewById(R.id.piechart);
-        pieChart.setUsePercentValues(true);
-
-        pieChart.setHoleRadius(75f);
-        pieChart.setTransparentCircleRadius(20f);
+        RecyclerView list = findViewById(R.id.list_item);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        linearLayoutManager.setReverseLayout(true);
+        linearLayoutManager.setStackFromEnd(true);
+        list.setLayoutManager(linearLayoutManager);
 
         List<PieEntry> value = new ArrayList<>();
         value.add(new PieEntry(400));
         value.add(new PieEntry(600));
-
-        Description desc = new Description();
-        desc.setText("");
-        pieChart.setDescription(desc);
-        pieChart.getLegend().setEnabled(false);
         PieDataSet pieDataSet = new PieDataSet(value, "test");
-
-
-        PieData pieData = new PieData(pieDataSet);
-        pieChart.setData(pieData);
-
-        final int[] RAJ_COLORS = {
-                Color.rgb(210, 235, 245), Color.rgb(2, 136, 209)
-        };
         pieDataSet.setColors(RAJ_COLORS);
         pieDataSet.setSliceSpace(5f);
-        pieChart.animateXY(1000, 1000);
+        PieDataSet[] pieDataSetA = new PieDataSet[]{pieDataSet, pieDataSet, pieDataSet, pieDataSet};
+        list.setAdapter(new PieCardAdapter(pieDataSetA));
+
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(list);
+
+        //Main Pie Chart
+//        PieChart pieChart = findViewById(R.id.piechart);
+//        pieChart.setUsePercentValues(true);
+//
+//        pieChart.setHoleRadius(75f);
+//        pieChart.setTransparentCircleRadius(20f);
+//
+//        List<PieEntry> value = new ArrayList<>();
+//        value.add(new PieEntry(400));
+//        value.add(new PieEntry(600));
+//
+//        Description desc = new Description();
+//        desc.setText("");
+//        pieChart.setDescription(desc);
+//        pieChart.getLegend().setEnabled(false);
+//        PieDataSet pieDataSet = new PieDataSet(value, "test");
+//
+//
+//        PieData pieData = new PieData(pieDataSet);
+//        pieChart.setData(pieData);
+//
+//        final int[] RAJ_COLORS = {
+//                Color.rgb(210, 235, 245), Color.rgb(2, 136, 209)
+//        };
+//        pieDataSet.setColors(RAJ_COLORS);
+//        pieDataSet.setSliceSpace(5f);
+//        pieChart.animateXY(1000, 1000);
 
 
         //Bottom Line Chart
@@ -116,4 +141,6 @@ public class detail_screen extends AppCompatActivity {
         Intent intent = new Intent(this, dashboard_screen.class);
         startActivity(intent);
     }
+
+
 }

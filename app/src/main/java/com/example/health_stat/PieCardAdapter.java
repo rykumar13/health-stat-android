@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.PieChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -36,8 +37,19 @@ public class PieCardAdapter extends RecyclerView.Adapter<PieCardAdapter.CardView
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
         PieData pieData = new PieData(PieDataSet[position]);
         holder.pieChart.setData(pieData);
-        holder.pieChart.notifyDataSetChanged();
-        holder.pieChart.invalidate();
+        renderPie(holder.pieChart);
+    }
+
+    public void renderPie(PieChart pieChart) {
+        pieChart.setHoleRadius(75f);
+        pieChart.setTransparentCircleRadius(20f);
+        Description desc = new Description();
+        desc.setText("");
+        pieChart.setDescription(desc);
+        pieChart.getLegend().setEnabled(false);
+        pieChart.animateXY(1000, 1000);
+        pieChart.notifyDataSetChanged();
+        pieChart.invalidate();
     }
 
     @Override

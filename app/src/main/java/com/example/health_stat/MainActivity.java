@@ -22,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         RecyclerView list = findViewById(R.id.list_item);
+        list.animate();
         list.setLayoutManager((new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)));
 
         List<PieEntry> value = new ArrayList<>();
         value.add(new PieEntry(400));
         value.add(new PieEntry(600));
         PieDataSet pieDataSet = new PieDataSet(value, "test");
-        PieDataSet[] pieDataSetA = new PieDataSet[]{pieDataSet};
+        PieDataSet[] pieDataSetA = new PieDataSet[]{pieDataSet, pieDataSet, pieDataSet, pieDataSet};
         list.setAdapter(new PieCardAdapter(pieDataSetA));
 
         SnapHelper snapHelper = new LinearSnapHelper();
